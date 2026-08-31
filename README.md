@@ -99,4 +99,4 @@ Detalhes completos, incluindo limitações conhecidas (vitrine comercial da XP s
 
 ## Uso de IA
 
-Todo apoio de IA (Claude) está documentado em `docs/log_ia.md`, em terceira pessoa, separando o que foi diagnosticado pela IA do que foi decidido, executado e validado pela candidata em seu próprio ambiente.
+Todo apoio de IA (Claude), modelo Sonnet 5, está documentado em `docs/log_ia.md`, em primeira pessoa, separando o que foi diagnosticado pela IA do que foi decidido, executado e validado pela candidata em meu próprio ambiente.
