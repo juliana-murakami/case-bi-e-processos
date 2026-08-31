@@ -9,8 +9,7 @@ Como os 17 fundos públicos da Kinea estão posicionados na prateleira pública 
 
 XP tratada simultaneamente como **cliente** (canal a otimizar) e **distribuidora** (concorrência aparece na mesma prateleira).
 
-## Resultado em uma frase
-
+## Resultado 
 Dos 68 pares fundo × dimensão avaliados, **39 estão bem posicionados (57%)**, **17 em desvantagem** (concentrados em taxa de administração acima da mediana dos concorrentes diretos), **5 mal comunicados** (a ficha pública não reflete um resultado real que o fundo já tem) e **7 em limitação de categoria/plataforma** (nem Kinea nem concorrente têm o dado — não conta como desvantagem competitiva).
 
 Três fundos foram priorizados para aprofundamento por combinarem maior desvio numérico com maior ambiguidade sobre a causa: **KNIP11** (maior desvio negativo de retorno do portfólio, exige investigação antes de qualquer ação comercial), **KDIF11** (retorno 5,75 p.p. acima da mediana dos pares, mas ficha pública quebrada — tabela de rentabilidade zerada), **KNHY11** (taxa 63% acima da mediana, mas retorno mais resiliente que os pares — taxa fácil de justificar, falta comunicar isso).
