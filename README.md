@@ -69,7 +69,7 @@ python src/quality/validate_universe.py \
 
 python src/transformation/build_competitive_universe.py
 
-# SQL contra os dados reais (prova de que não é SQL decorativo)
+# SQL contra os dados reais 
 python sql/run_sql_queries.py
 
 # Dashboard
