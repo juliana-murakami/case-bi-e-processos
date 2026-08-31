@@ -1,6 +1,7 @@
 # Case BI Kinea — Inteligência Competitiva na Prateleira XP
 
 **Candidata:** Juliana Manso Murakami
+
 **Processo seletivo:** Business Intelligence — Kinea Investimentos
 
 ## O case
