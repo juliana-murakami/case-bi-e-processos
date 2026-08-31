@@ -1,138 +1,102 @@
-# Case Kinea BI — Inteligência Competitiva na Prateleira XP
+# Case BI Kinea — Inteligência Competitiva na Prateleira XP
 
-Projeto de Business Intelligence para o processo seletivo Kinea: mapeamento dos fundos Kinea na prateleira pública da XP, comparação com o universo competitivo e recomendações comerciais para os próximos 90 dias.
+**Candidata:** Juliana Manso Murakami
+**Processo seletivo:** Business Intelligence — Kinea Investimentos
 
-## Status atual
-🔵 **Etapa 2 em andamento** — universo Kinea identificado (13 fundos, ficha completa em 2 deles); universo competitivo ainda não populado. Ver `docs/metodologia.md` para detalhes e limitações.
+## O case
 
-## Objetivo
-Responder: *na prateleira pública da XP, em quais dimensões os fundos Kinea estão bem posicionados, em desvantagem ou mal comunicados — e quais ações Comercial/Marketing deveriam priorizar nos próximos 90 dias?*
+Como os 17 fundos públicos da Kinea estão posicionados na prateleira pública da XP, em 4 dimensões — **Produto**, **Liquidez e custos**, **Retorno e risco** e **Conteúdo e diferenciação** — e quais ações de Comercial/Marketing priorizar nos próximos 90 dias?
 
-## Estrutura do projeto
+XP tratada simultaneamente como **cliente** (canal a otimizar) e **distribuidora** (concorrência aparece na mesma prateleira).
+
+## Resultado em uma frase
+
+Dos 68 pares fundo × dimensão avaliados, **39 estão bem posicionados (57%)**, **17 em desvantagem** (concentrados em taxa de administração acima da mediana dos concorrentes diretos), **5 mal comunicados** (a ficha pública não reflete um resultado real que o fundo já tem) e **7 em limitação de categoria/plataforma** (nem Kinea nem concorrente têm o dado — não conta como desvantagem competitiva).
+
+Três fundos foram priorizados para aprofundamento por combinarem maior desvio numérico com maior ambiguidade sobre a causa: **KNIP11** (maior desvio negativo de retorno do portfólio, exige investigação antes de qualquer ação comercial), **KDIF11** (retorno 5,75 p.p. acima da mediana dos pares, mas ficha pública quebrada — tabela de rentabilidade zerada), **KNHY11** (taxa 63% acima da mediana, mas retorno mais resiliente que os pares — taxa fácil de justificar, falta comunicar isso).
+
+## Estrutura do repositório
+
 ```
-case-kinea-bi/
-├── README.md                    # este arquivo
+├── app.py                        # Dashboard Streamlit (5 abas)
 ├── requirements.txt
-├── .gitignore
-├── config/
-│   └── kinea_fund_urls.csv      # lista de URLs a coletar (editável, sem hardcode no scraper)
-├── data/
-│   ├── raw/                     # dado bruto, tal como coletado (+ HTML salvo por src/ingestion)
-│   ├── staging/                 # (reservado para tratamento intermediário futuro)
-│   └── processed/               # base tratada + relatórios de qualidade
+├── notebooks/
+│   ├── coleta_fundos_kinea.ipynb       # Etapa 1-2: coleta dos 17 fundos Kinea na XP
+│   ├── universo_competitivo.ipynb      # Etapa 2b-6: universo competitivo via CVM
+│   └── aprofundamento_3_fundos.ipynb   # Etapa 7: aprofundamento KNIP11/KDIF11/KNHY11
 ├── src/
-│   ├── ingestion/
-│   │   └── xp_fund_scraper.py   # coleta ficha de fundo individual (requests + BeautifulSoup)
 │   ├── transformation/
-│   │   ├── standardize.py       # funções de limpeza/padronização + chave robusta
-│   │   └── build_universe.py    # raw -> processed
+│   │   ├── build_universe.py           # raw → processed (universo Kinea)
+│   │   ├── build_competitive_universe.py  # universo competitivo via 4 fontes CVM
+│   │   ├── enrich_fii_cnpj.py          # CNPJ dos 7 FIIs (ausente na ficha XP)
+│   │   ├── standardize.py              # normalização, build_fund_key
+│   │   └── patrimonio_liquido.py       # PL comparável dos 17 fundos
 │   ├── quality/
-│   │   └── validate_universe.py # checagens de qualidade + relatório
-│   └── analysis/                # (reservado para Etapa 2b/3)
+│   │   └── validate_universe.py        # checagens de qualidade, não corrige sozinho
+│   └── collection/
+│       ├── xp_fund_scraper.py          # scraper (curl_cffi, impersonate=chrome)
+│       └── cvm_download.py             # download CVM Dados Abertos
 ├── sql/
 │   ├── 01_schema.sql
 │   ├── 02_universo_kinea_analise.sql
-│   ├── 03_regras_comparabilidade.sql
-│   └── run_sql_queries.py       # executa o SQL de fato, contra os dados reais (DuckDB)
-├── notebooks/                   # (reservado)
-├── dashboard/                   # (reservado — Streamlit, etapa posterior)
-├── docs/
-│   ├── metodologia.md
-│   ├── dicionario_dados.md
-│   ├── fontes.md
-│   └── log_ia.md
-└── prompts/                     # (reservado — registro de prompts relevantes)
+│   ├── 03_regras_comparabilidade.sql   # regras de comparabilidade por categoria
+│   └── run_sql_queries.py              # roda o SQL contra os dados reais via DuckDB
+├── data/
+│   ├── raw/                            # dado bruto, como coletado (html + csv)
+│   └── processed/                      # dado tratado — sem sufixo de versão, sempre o atual
+└── docs/
+    ├── metodologia.md                  # definições, regras de comparabilidade, limitações
+    ├── dicionario_dados.md             # schema de cada CSV
+    ├── fontes.md                       # log de fontes com URL e data de acesso
+    ├── log_ia.md                       # uso de IA — diagnóstico vs. decisão da candidata
+    └── memo_executivo.docx             # memo executivo (2 páginas)
 ```
 
-**Por que essa estrutura:** `raw/staging/processed` separa dado bruto (auditável) de dado tratado (consumível), seguindo o padrão comum de pipelines de dados. `src/` é dividido por responsabilidade (ingestion → transformation → quality → analysis) para que cada etapa possa ser testada e rodada isoladamente — importante para o teste ao vivo, onde pode ser pedido para alterar só uma parte do pipeline sem reescrever tudo. `sql/` fica no nível raiz (não dentro de `src/`) porque o case pede explicitamente uma camada SQL visível e avaliável separadamente.
-
-## Notebooks vs. scripts .py
-O projeto tem notebooks (para rodar interativamente, célula a célula) e scripts `.py` equivalentes (mesma lógica, para reprodutibilidade/automação sem precisar abrir notebook). Cada notebook cobre uma fonte de dado / responsabilidade:
-
-| Notebook | Camada do case | Fonte |
-|---|---|---|
-| `notebooks/coleta_fundos_kinea.ipynb` | Visão completa (parte 1) — mapear fundos Kinea | XP (`conteudos.xpi.com.br`) |
-| `notebooks/universo_competitivo.ipynb` | Visão completa (parte 2) — mapear universos competitivos | CVM (`dados.cvm.gov.br`) |
-
-## Como executar
+## Como rodar
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt --break-system-packages
 
-# 1) (Opcional) Completar a coleta dos fundos Kinea pendentes na XP
-python src/ingestion/xp_fund_scraper.py --only-pending --debug
-# (ou usar notebooks/coleta_fundos_kinea.ipynb, célula a célula)
+# Pipeline — ordem obrigatória (cada etapa depende da anterior)
+python src/transformation/build_universe.py \
+    --input data/raw/universo_kinea_raw.csv \
+    --output data/processed/universo_kinea.csv
 
-# 2) Tratar/padronizar o dado bruto -> base processada
-python src/transformation/build_universe.py
+python src/transformation/enrich_fii_cnpj.py
+python src/quality/validate_universe.py \
+    --input data/processed/universo_kinea.csv \
+    --output data/processed/quality_report_universo_kinea.md
 
-# 3) Rodar checagens de qualidade
-python src/quality/validate_universe.py
+python src/transformation/build_competitive_universe.py
 
-# 4) Baixar o cadastro completo de fundos da CVM (universo competitivo)
-python src/ingestion/cvm_download.py
-
-# 5) Descobrir a classe ANBIMA real de cada fundo Kinea e montar o
-#    universo competitivo (todos os concorrentes por categoria)
-python src/analysis/build_competitive_universe.py
-
-# 6) Rodar as consultas SQL contra os dados reais
+# SQL contra os dados reais (prova de que não é SQL decorativo)
 python sql/run_sql_queries.py
+
+# Dashboard
+streamlit run app.py
 ```
 
-Todos os caminhos são relativos à raiz do projeto (sem caminho absoluto). Todos os parâmetros importantes (arquivo de entrada, saída, filtro `--only-pending`) são configuráveis via linha de comando — pensado para o teste ao vivo (trocar fonte, refazer consulta, adicionar fundo).
+Nenhum número no dashboard, no memo ou nos slides é hardcoded — tudo é recalculado a partir de `data/raw/` a cada execução do pipeline.
 
-## Dependências
-Ver `requirements.txt`. Principais: `requests`, `beautifulsoup4`, `pandas`, `duckdb`, `sqlparse`.
+## Os 5 entregáveis
 
-## Fluxo de arquivos brutos (importante para não duplicar dados)
-- `data/raw/universo_kinea_raw_manual_original.csv` — os 2 fundos coletados manualmente na Etapa 1 (fonte fixa, não sobrescrever).
-- `data/raw/universo_kinea_raw_scraped.csv` — os demais fundos coletados pelo `notebooks/coleta_fundos_kinea.ipynb` (regenerado a cada execução do notebook).
-- `data/raw/universo_kinea_raw.csv` — os dois acima **combinados** (arquivo derivado; a última célula do notebook o recria do zero a cada execução — não editar à mão, não faz sentido rodar a célula de merge mais de uma vez sobre o resultado dela mesma).
+| Entregável | Onde está |
+|---|---|
+| Memo executivo (2 páginas) | `docs/memo_executivo.docx` |
+| Apresentação (10 slides) | enviada em anexo separado |
+| Dashboard navegável | `app.py` (Streamlit) |
+| Repositório reprodutível | este repositório |
+| Governança (dicionário, fontes, log de IA) | `docs/dicionario_dados.md`, `docs/fontes.md`, `docs/log_ia.md` |
 
-## Fontes
-Ver `docs/fontes.md` para a tabela completa (URL, data de acesso, uso). Resumo: Expert XP (`conteudos.xpi.com.br`) como fonte primária das fichas de fundo; CVM Dados Abertos planejado como fonte do universo competitivo completo (Etapa 2b/3).
+## Metodologia — pontos-chave
 
-## Limitações conhecidas (ver `docs/metodologia.md` para detalhes)
-- Lista de fundos Kinea obtida via busca — validação final requer navegação manual controlada da vitrine XP (`xpi.com.br/investimentos/fundos-de-investimento/lista/`), que é client-side e não tem forma pública/reproduzível de acesso sem JS conhecida até o momento.
-- 11 dos 13 fundos identificados ainda não têm ficha completa extraída (scraper pronto, pendente de execução em ambiente com rede).
-- Universo competitivo: regra definida (`sql/03_regras_comparabilidade.sql`), mas ainda não populado com concorrentes reais.
+- **Concorrência agrupada por similaridade real de estratégia**, não por classe ANBIMA/CVM genérica (ex.: KDIF11 compete com fundos de debênture incentivada de infraestrutura, não com todo o universo "Renda Fixa Duração Livre Crédito Livre" de ~3.146 fundos).
+- **Regras de classificação do scorecard:** desvantagem em Liquidez/custos a partir de +30% acima da mediana; em Retorno/risco a partir de -2 p.p. abaixo da mediana (maior tolerância, reflete variância natural de retorno). "Mal comunicado" só quando há assimetria real (concorrente tem o dado, Kinea não) — quando os dois lados não têm, é "limitação de categoria/plataforma".
+- **Hierarquia de chave de fundo:** CNPJ > ticker > nome padronizado. Nunca join só por nome.
+- **robots.txt:** `conteudos.xpi.com.br` é scrapeável (só restringe `/wp-admin/` e `.pdf`); `maisretorno.com` bloqueia acesso automatizado — usado só como referência manual, nunca raspado.
 
-## Sobre dados grandes / não versionados
-`data/raw/html/` (HTML bruto salvo pelo scraper) pode crescer bastante — está no `.gitignore`. Se for necessário versionar para reprodutibilidade total, considerar Git LFS ou compactar em `.zip` e documentar o hash/data da coleta no commit.
+Detalhes completos, incluindo limitações conhecidas (vitrine comercial da XP sem endpoint público reproduzível, fundos de colocação privada sem ficha pública) em `docs/metodologia.md`.
 
 ## Uso de IA
-Ver `docs/log_ia.md`.
 
----
-
-## Como reproduzir do zero
-
-Ordem de execução (Python 3.9, `/usr/bin/python3`):
-
-```bash
-# 1. Coleta dos fundos Kinea na XP (gera data/raw/ e data/processed/universo_kinea.csv)
-#    -> rode o notebook notebooks/coleta_fundos_kinea.ipynb de cima a baixo
-
-# 2. Baixar as bases cadastrais da CVM
-python src/ingestion/cvm_download.py
-
-# 3. Universo competitivo + PL comparável dos 17 fundos
-#    -> rode o notebook notebooks/universo_competitivo.ipynb de cima a baixo
-#    (ou, por linha de comando, só o universo competitivo:)
-python src/analysis/build_competitive_universe.py --project-root .
-```
-
-### Saídas em `data/processed/`
-| Arquivo | Conteúdo |
-|---|---|
-| `universo_kinea.csv` | Ficha bruta dos 17 fundos Kinea (coleta XP) |
-| `universo_kinea_completo.csv` | Os 17 + PL (CVM) + percentil na categoria |
-| `fundos_concorrentes.csv` | Concorrentes por fundo Kinea, com PL |
-| `universo_competitivo_resumo.csv` | 1 linha por fundo Kinea: classe + tamanho do universo |
-
-### Organização
-- `data/raw/` — dados brutos (coleta manual, scraping, downloads CVM)
-- `data/processed/` — saídas tratadas; **cada arquivo é sempre a versão atual** (sem sufixos `_v2`/`_atualizado`)
-- `src/` — lógica reutilizável (fonte de verdade); notebooks só orquestram
-- `docs/` — governança: metodologia, fontes, dicionário de dados, log de IA
+Todo apoio de IA (Claude) está documentado em `docs/log_ia.md`, em terceira pessoa, separando o que foi diagnosticado pela IA do que foi decidido, executado e validado pela candidata em seu próprio ambiente.
