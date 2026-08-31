@@ -1,0 +1,18 @@
+nome_padronizado,categoria_padronizada,status_liquidez,status_retorno,status_produto,status_conteudo,n_bem_posicionado,n_desvantagem,n_mal_comunicado
+Kinea Credito Agro FIAGRO FII (KNCA11),Fundo Imobiliário (FII),bem posicionado,limitação de categoria/plataforma,limitação de categoria/plataforma,mal comunicado,1,0,1
+Kinea Rendimentos Imobiliarios FII (KNCR11),Fundo Imobiliário (FII),desvantagem,desvantagem,limitação de categoria/plataforma,bem posicionado,1,2,0
+Kinea Indices de Precos FII (KNIP11),Fundo Imobiliário (FII),bem posicionado,desvantagem,limitação de categoria/plataforma,bem posicionado,2,1,0
+Kinea Alpes Prev XP Seg RF CP FICFI,Multimercado,bem posicionado,bem posicionado,mal comunicado,mal comunicado,2,0,2
+Kinea Renda Imobiliaria FII (KNRI11),Fundo Imobiliário (FII),desvantagem,desvantagem,limitação de categoria/plataforma,bem posicionado,1,2,0
+Kinea High Yield CRI FII (KNHY11),Fundo Imobiliário (FII),desvantagem,bem posicionado,limitação de categoria/plataforma,bem posicionado,2,1,0
+Kinea Infra FII (KDIF11),Renda Fixa,desvantagem,bem posicionado,mal comunicado,mal comunicado,1,1,2
+Kinea Andes FIF CIC RF CP LP RL,Renda Fixa,desvantagem,bem posicionado,bem posicionado,bem posicionado,3,1,0
+Kinea Oportunidade FIF RF CP RL - Subclasse I,Renda Fixa,desvantagem,bem posicionado,bem posicionado,bem posicionado,3,1,0
+Kinea Fundo de Fundos Imobiliarios FII (KFOF11),Fundo Imobiliário (FII),desvantagem,bem posicionado,limitação de categoria/plataforma,bem posicionado,2,1,0
+Kinea Incentivado RF CP LP FIF,Renda Fixa,bem posicionado,bem posicionado,bem posicionado,bem posicionado,4,0,0
+Kinea Chronos FIM RL - Subclasse I,Multimercado - Macro,bem posicionado,desvantagem,bem posicionado,bem posicionado,3,1,0
+Kinea Atlas II FIM RL - Subclasse I,Multimercado - Macro,desvantagem,desvantagem,bem posicionado,bem posicionado,2,2,0
+Kinea IPCA Dinamico II FIF RF RL - Subclasse II,Renda Fixa,desvantagem,bem posicionado,bem posicionado,bem posicionado,3,1,0
+Kinea Apolo FIF MM RL,Multimercado - Macro,bem posicionado,bem posicionado,bem posicionado,bem posicionado,4,0,0
+Kinea Dakar FIF CIC RF LP RL,Renda Fixa,desvantagem,bem posicionado,bem posicionado,bem posicionado,3,1,0
+Kinea Gama FIF CIC em Acoes RL - Subclasse I,Ações,desvantagem,desvantagem,bem posicionado,bem posicionado,2,2,0

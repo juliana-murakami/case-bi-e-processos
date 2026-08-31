@@ -1,0 +1,13 @@
+nome_padronizado,taxa_kinea_pct,mediana_concorrentes_pct,n_concorrentes,desvio_relativo_pct,fonte
+Kinea Infra FII (KDIF11),1.05,0.8,3,31.2,"scraper XP (GRUPO: Infra Debenture (KDIF11, Incentivado))"
+Kinea Incentivado RF CP LP FIF,0.7,0.8,3,-12.5,"scraper XP (GRUPO: Infra Debenture (KDIF11, Incentivado))"
+Kinea Andes FIF CIC RF CP LP RL,0.7,0.44999999999999996,2,55.6,"scraper XP (GRUPO: RF Credito Generico (Andes, Oportunidade, IPCA Dinamico, Dakar))"
+Kinea Oportunidade FIF RF CP RL - Subclasse I,0.8,0.44999999999999996,2,77.8,"scraper XP (GRUPO: RF Credito Generico (Andes, Oportunidade, IPCA Dinamico, Dakar))"
+Kinea IPCA Dinamico II FIF RF RL - Subclasse II,0.66,0.44999999999999996,2,46.7,"scraper XP (GRUPO: RF Credito Generico (Andes, Oportunidade, IPCA Dinamico, Dakar))"
+Kinea Dakar FIF CIC RF LP RL,0.9,0.44999999999999996,2,100.0,"scraper XP (GRUPO: RF Credito Generico (Andes, Oportunidade, IPCA Dinamico, Dakar))"
+Kinea Chronos FIM RL - Subclasse I,1.5,1.33,2,12.8,"scraper XP (GRUPO: Multimercados Macro (Chronos, Atlas II, Apolo))"
+Kinea Atlas II FIM RL - Subclasse I,2.0,1.33,2,50.4,"scraper XP (GRUPO: Multimercados Macro (Chronos, Atlas II, Apolo))"
+Kinea Apolo FIF MM RL,0.8,1.33,2,-39.8,"scraper XP (GRUPO: Multimercados Macro (Chronos, Atlas II, Apolo))"
+Kinea Gama FIF CIC em Acoes RL - Subclasse I,2.0,1.5,2,33.3,scraper XP (GRUPO: Acoes Livre (Gama))
+Kinea Credito Agro FIAGRO FII (KNCA11),1.0,1.0,3,0.0,scraper XP (GRUPO: FIAGRO (KNCA11))
+Kinea Alpes Prev XP Seg RF CP FICFI,1.0,0.8,3,25.0,scraper XP (GRUPO: Previdencia RF CP (Alpes Prev))

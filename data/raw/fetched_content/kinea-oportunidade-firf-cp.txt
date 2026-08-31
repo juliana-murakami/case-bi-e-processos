@@ -1,0 +1,76 @@
+Kinea Oportunidade FIF RF CP RL - Subclasse I
+
+Apenas investidor qualificado
+11 Risco Médio
+
+Taxa de Administração (ao ano)
+0,80 %
+Cotização de Resgate
+D+90 (Dias Corridos)
+Aplicação Mínima
+R$ 500
+Público Alvo
+Investidor Qualificado
+
+Patrimônio Líquido
+Atual R$ 528.9 mi
+Volatilidade
+Atual 0,30%
+Cotistas
+Atual 3.1 mil
+Drawdown
+Atual 0%
+
+Características
+Básicas
+CNPJ
+32.990.051/0001-02
+Aplicação Mínima
+R$ 500
+Taxa de Administração (ao ano)
+0,80 %
+Taxa de Performance
+0,00 %
+Cotização de Resgate
+D+90 (Dias Corridos)
+Liquidação de Resgate
+D+1 (Dias Úteis)
+Público Alvo
+Investidor Qualificado
+Benchmark
+CDI
+
+Prestadores de Serviços
+Gestor
+Kinea Investimentos
+Administrador
+Intrag DTVM
+Custodiante
+Itaú
+Auditor
+PWC
+
+Classificação XP
+Crédito High Grade
+
+Mais Informações
+Risco
+11
+Data de Início
+14/04/2020
+Benchmark
+CDI
+Classificação CVM
+Renda Fixa Pós-Fixado
+Movimentação Mínima
+R$ 500
+Saldo mínimo de permanência
+R$ 500
+Cotização de Aplicação
+D+0 (Dias Úteis)
+Taxa Máxima de Administração (ao ano)
+0,80 %
+Objetivo
+O objetivo do FUNDO é aplicar, no mínimo, 80% de seus recursos em ativos financeiros de renda fixa relacionados diretamente, ou sintetizados via derivativos, ao fator de risco que dá nome à classe.
+Tributação
+Longo Prazo

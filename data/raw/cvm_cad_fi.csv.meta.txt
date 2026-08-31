@@ -1,0 +1,3 @@
+source_url: https://dados.cvm.gov.br/dados/FI/CAD/DADOS/cad_fi.csv
+access_timestamp: 2026-08-17T03:25:16.366549+00:00
+tamanho_bytes: 17905705

@@ -1,0 +1,16 @@
+fundo_kinea,metrica,valor_kinea,mediana_concorrentes,n_concorrentes,grupo,fonte,desvio_vs_mediana
+Kinea Andes FIF CIC RF CP LP RL,Rentabilidade (No Ano),8.78,9.585,2,"GRUPO: RF Credito Generico (Andes, Oportunidade, IPCA Dinamico, Dakar)",scraper XP (concorrentes agrupados por similaridade de estratégia),-0.81
+Kinea Oportunidade FIF RF CP RL - Subclasse I,Rentabilidade (No Ano),9.15,9.585,2,"GRUPO: RF Credito Generico (Andes, Oportunidade, IPCA Dinamico, Dakar)",scraper XP (concorrentes agrupados por similaridade de estratégia),-0.44
+Kinea IPCA Dinamico II FIF RF RL - Subclasse II,Rentabilidade (No Ano),8.95,9.585,2,"GRUPO: RF Credito Generico (Andes, Oportunidade, IPCA Dinamico, Dakar)",scraper XP (concorrentes agrupados por similaridade de estratégia),-0.64
+Kinea Dakar FIF CIC RF LP RL,Rentabilidade (No Ano),7.7,9.585,2,"GRUPO: RF Credito Generico (Andes, Oportunidade, IPCA Dinamico, Dakar)",scraper XP (concorrentes agrupados por similaridade de estratégia),-1.89
+Kinea Chronos FIM RL - Subclasse I,Rentabilidade (No Ano),7.4,10.17,2,"GRUPO: Multimercados Macro (Chronos, Atlas II, Apolo)",scraper XP (concorrentes agrupados por similaridade de estratégia),-2.77
+Kinea Atlas II FIM RL - Subclasse I,Rentabilidade (No Ano),6.21,10.17,2,"GRUPO: Multimercados Macro (Chronos, Atlas II, Apolo)",scraper XP (concorrentes agrupados por similaridade de estratégia),-3.96
+Kinea Apolo FIF MM RL,Rentabilidade (No Ano),8.23,10.17,2,"GRUPO: Multimercados Macro (Chronos, Atlas II, Apolo)",scraper XP (concorrentes agrupados por similaridade de estratégia),-1.94
+Kinea Gama FIF CIC em Acoes RL - Subclasse I,Rentabilidade (No Ano),-2.51,6.699999999999999,2,GRUPO: Acoes Livre (Gama),scraper XP (concorrentes agrupados por similaridade de estratégia),-9.21
+Kinea Credito Agro FIAGRO FII (KNCA11),Rentabilidade (No Ano),0.0,0.0,2,GRUPO: FIAGRO (KNCA11),scraper XP (concorrentes agrupados por similaridade de estratégia),0.0
+Kinea Incentivado RF CP LP FIF,Rentabilidade (No Ano),6.4,5.1,3,"GRUPO: Infra Debenture (KDIF11, Incentivado)",scraper XP (concorrentes agrupados por similaridade de estratégia),1.3
+Kinea Renda Imobiliaria FII (KNRI11),Rentabilidade (No Ano),6.35,9.145000000000001,2,GRUPO: FII Tijolo Diversificado (KNRI11),scraper XP (concorrentes agrupados por similaridade de estratégia),-2.8
+Kinea Rendimentos Imobiliarios FII (KNCR11),Rentabilidade (No Ano),1.9,9.24,2,"GRUPO: FII Papel Recebiveis (KNCR11, KNIP11)",scraper XP (concorrentes agrupados por similaridade de estratégia),-7.34
+Kinea Indices de Precos FII (KNIP11),Rentabilidade (No Ano),-2.96,9.24,2,"GRUPO: FII Papel Recebiveis (KNCR11, KNIP11)",scraper XP (concorrentes agrupados por similaridade de estratégia),-12.2
+Kinea Fundo de Fundos Imobiliarios FII (KFOF11),Rentabilidade (No Ano),11.82,1.5099999999999998,2,GRUPO: FII Fundo de Fundos (KFOF11),scraper XP (concorrentes agrupados por similaridade de estratégia),10.31
+Kinea Alpes Prev XP Seg RF CP FICFI,Rentabilidade (No Ano),8.35,8.85,3,GRUPO: Previdencia RF CP (Alpes Prev),scraper XP (concorrentes agrupados por similaridade de estratégia),-0.5

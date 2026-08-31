@@ -1,0 +1,18 @@
+nome_referencia,url,tipo_pagina,status_confirmacao,observacao
+Kinea Chronos FIM RL - Subclasse I,https://conteudos.xpi.com.br/fundos-de-investimento/kinea-chronos-fim/,fundo_aberto,identificado_pendente,Coletado via Claude web_fetch em 2026-08-15
+Kinea Rendimentos Imobiliarios FII (KNCR11),https://conteudos.xpi.com.br/fundos-imobiliarios/kinea-rendimentos-imobiliarios-fii-kncr11/,fii,identificado_pendente,Coletado via Claude web_fetch em 2026-08-15
+Kinea Atlas II FIM RL - Subclasse I,https://conteudos.xpi.com.br/fundos-de-investimento/kinea-atlas-ii-fim/,fundo_aberto,ficha_coletada,Executar scraper local para completar ficha
+Kinea Oportunidade FIF RF CP RL - Subclasse I,https://conteudos.xpi.com.br/fundos-de-investimento/kinea-oportunidade-firf-cp/,fundo_aberto,ficha_coletada,Executar scraper local para completar ficha
+Kinea Gama FIF CIC em Acoes RL - Subclasse I,https://conteudos.xpi.com.br/fundos-de-investimento/kinea-gama-fic-fia/,fundo_aberto,ficha_coletada,Executar scraper local para completar ficha
+Kinea IPCA Dinamico II FIF RF RL - Subclasse II,https://conteudos.xpi.com.br/fundos-de-investimento/kinea-ipca-dinamico-ii-advisory-fic-firf/,fundo_aberto,ficha_coletada,Executar scraper local para completar ficha
+Kinea Alpes Prev XP Seg RF CP FICFI,https://conteudos.xpi.com.br/previdencia-privada/kinea-alpes-prev-xp-seg-rf-cp-ficfi/,previdencia,ficha_coletada,Executar scraper local para completar ficha
+Kinea Renda Imobiliaria FII (KNRI11),https://conteudos.xpi.com.br/fundos-imobiliarios/kinea-renda-imobiliaria-fii-knri11/,fii,ficha_coletada,Executar scraper local para completar ficha
+Kinea Indices de Precos FII (KNIP11),https://conteudos.xpi.com.br/fundos-imobiliarios/kinea-indices-de-precos-fii-knip11/,fii,ficha_coletada,Executar scraper local para completar ficha
+Kinea Infra FII (KDIF11),https://conteudos.xpi.com.br/fundos-imobiliarios/kinea-infra-kdif11/,fii,ficha_coletada,Executar scraper local para completar ficha
+Kinea Fundo de Fundos Imobiliarios FII (KFOF11),https://conteudos.xpi.com.br/fundos-imobiliarios/kinea-fundo-de-fundos-imobiliarios-fii-kfof11/,fii,ficha_coletada,Executar scraper local para completar ficha
+Kinea Credito Agro FIAGRO FII (KNCA11),https://conteudos.xpi.com.br/fundos-imobiliarios/kinea-credito-agro-fiagro-fii-knca11/,fii,ficha_coletada,Executar scraper local para completar ficha
+Kinea High Yield CRI FII (KNHY11),https://conteudos.xpi.com.br/fundos-imobiliarios/kinea-high-yield-cri-fii-knhy11/,fii,ficha_coletada,Executar scraper local para completar ficha
+Kinea Andes FIF CIC RF CP LP RL,https://conteudos.xpi.com.br/fundos-de-investimento/kinea-andes-rf-cp-ficfi-lp/,fundo_aberto,ficha_coletada,Encontrado na vitrine XP (validacao manual da candidata) em 2026-08-15 - nao estava na lista via busca inicial
+Kinea Apolo FIF MM RL,https://conteudos.xpi.com.br/fundos-de-investimento/kinea-apolo-fic-fim/,fundo_aberto,ficha_coletada,Encontrado na vitrine XP (validacao manual da candidata) em 2026-08-15 - nao estava na lista via busca inicial
+Kinea Dakar FIF CIC RF LP RL,https://conteudos.xpi.com.br/fundos-de-investimento/kinea-dakar-rf-fic-fi-lp/,fundo_aberto,ficha_coletada,Encontrado na vitrine XP (validacao manual da candidata) em 2026-08-15 - nao estava na lista via busca inicial
+Kinea Incentivado RF CP LP FIF,https://conteudos.xpi.com.br/fundos-de-investimento/kinea-incentivado-rf-cp-lp-fif-fundo-incentivado-em-debentur/,fundo_aberto,ficha_coletada,Encontrado na vitrine XP (validacao manual da candidata) em 2026-08-15 - nao estava na lista via busca inicial

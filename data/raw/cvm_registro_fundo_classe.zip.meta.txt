@@ -1,0 +1,3 @@
+source_url: https://dados.cvm.gov.br/dados/FI/CAD/DADOS/registro_fundo_classe.zip
+access_timestamp: 2026-08-17T03:25:15.763802+00:00
+tamanho_bytes: 6725032
