@@ -20,8 +20,6 @@
 | `extraction_method` | Como o dado foi obtido: `leitura_direta_pagina` (coleta manual assistida por IA, 2 fundos da Etapa 1 — ver docs/log_ia.md) \| `curl_cffi_notebook_local` (scraper automatizado, 15 fundos) \| `web_search_snippet` (identificado via busca, ficha ainda não extraída) | string | — | — |
 | `status_confirmacao` | `ficha_coletada` (todos os campos relevantes extraídos) \| `identificado_pendente` (fundo confirmado, ficha ainda não detalhada) | string | — | — |
 
-## Campos ainda não presentes (a incluir quando o universo competitivo for populado)
-`data/processed` também conterá, na Etapa 2b: `fundos_concorrentes.csv` (mesmo dicionário acima + `gestora`, `categoria_cvm`) e `universo_competitivo.csv` (ver schema em `sql/01_schema.sql`, tabela `regras_comparabilidade`, e estrutura proposta: `fundo_kinea | categoria_xp | subcategoria | universo_inicial | criterios_comparabilidade | universo_final | n_universo`).
 
 ## `universo_kinea_completo.csv`
 
